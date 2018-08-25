@@ -1,0 +1,24 @@
+a:2:{i:0;s:1455:"
+<a href="/index.php?r=activity%2Flink&id=6">
+    <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="8">
+        <div class="media">
+                            <!-- Show user image -->
+                <img class="media-object img-rounded pull-left" data-src="holder.js/32x32" alt="32x32"
+                     style="width: 32px; height: 32px;"
+                     src="/uploads/profile_image/5aaeaad2-992a-45a9-b650-023cc9358409.jpg?m=1535210637">
+            
+            <!-- Show space image, if you are outside from a space -->
+                                                <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ED</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Espace de bienvenue" style=" width: 20px; height: 20px">                
+            
+            <div class="media-body text-break">
+
+                <!-- Show content -->
+                <strong>David Roberts</strong> a écrit un commentaire "Nike - Just buy it. ;Wink;
+"                <br>
+
+                <!-- show time -->
+                <span class="time" title="2018-08-25T15:24:00+00:00">25 août 2018 - 15:24</span>            </div>
+        </div>
+    </li>
+</a>
+";i:1;N;}

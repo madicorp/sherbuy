@@ -1,0 +1,484 @@
+2018-08-25 14:39:49 [172.18.0.1][-][-][error][application] SQLSTATE[23000]: Integrity constraint violation: 1022 Can't write; duplicate key in table '#sql-1_4'
+The SQL being executed was: ALTER TABLE `space_membership` ADD CONSTRAINT `fk_space_membership-user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    in /var/www/html/protected/humhub/modules/space/migrations/m160205_203913_foreign_keys.php:17
+    in /var/www/html/protected/humhub/commands/MigrateController.php:184
+    in /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php:127
+2018-08-25 14:39:50 [172.18.0.1][-][-][error][application] SQLSTATE[23000]: Integrity constraint violation: 1022 Can't write; duplicate key in table '#sql-1_4'
+The SQL being executed was: ALTER TABLE `space_membership` ADD CONSTRAINT `fk_space_membership-space_id` FOREIGN KEY (`space_id`) REFERENCES `space` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    in /var/www/html/protected/humhub/modules/space/migrations/m160205_203913_foreign_keys.php:23
+    in /var/www/html/protected/humhub/commands/MigrateController.php:184
+    in /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php:127
+2018-08-25 14:39:52 [172.18.0.1][-][-][error][application] SQLSTATE[23000]: Integrity constraint violation: 1022 Can't write; duplicate key in table '#sql-1_4'
+The SQL being executed was: ALTER TABLE `space` ADD CONSTRAINT `fk_space-wall_id` FOREIGN KEY (`wall_id`) REFERENCES `wall` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    in /var/www/html/protected/humhub/modules/space/migrations/m160205_203913_foreign_keys.php:39
+    in /var/www/html/protected/humhub/commands/MigrateController.php:184
+    in /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php:127
+2018-08-25 14:39:52 [172.18.0.1][-][-][error][application] SQLSTATE[23000]: Integrity constraint violation: 1022 Can't write; duplicate key in table '#sql-1_4'
+The SQL being executed was: ALTER TABLE `space_module` ADD CONSTRAINT `fk_space_module-module_id` FOREIGN KEY (`module_id`) REFERENCES `module_enabled` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    in /var/www/html/protected/humhub/modules/space/migrations/m160205_203913_foreign_keys.php:45
+    in /var/www/html/protected/humhub/commands/MigrateController.php:184
+    in /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php:127
+2018-08-25 14:39:53 [172.18.0.1][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'm160205_203913_foreign_keys' for key 'PRIMARY'' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->addMigrationHistory('<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#11 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#17 /var/www/html/index.php(25): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'm160205_203913_foreign_keys' for key 'PRIMARY'
+The SQL being executed was: INSERT INTO `migration` (`version`, `apply_time`) VALUES ('m160205_203913_foreign_keys', 1535207992)' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `mi...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->addMigrationHistory('<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#11 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#17 /var/www/html/index.php(25): yii\base\Application->run()
+#18 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1062
+    [2] => Duplicate entry 'm160205_203913_foreign_keys' for key 'PRIMARY'
+)
+
+2018-08-25 14:39:46 [172.18.0.1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/init'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Finit'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Finit'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '40070'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=installer%2Fsetup%2Fdatabase'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; _csrf=db99359fa110fba7dfe17dc8a98f102d5b05d4d099ed4d36fca23b5af85ab620a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xTktkhp6C1CMvdnGBtG4r5rgd2Tidqnj%22%3B%7D; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535207986.7338
+    'REQUEST_TIME' => 1535207986
+]
+2018-08-25 14:47:19 [172.18.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.migration' doesn't exist' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->addMigrationHistory('<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#11 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#17 /var/www/html/index.php(25): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.migration' doesn't exist
+The SQL being executed was: INSERT INTO `migration` (`version`, `apply_time`) VALUES ('m140907_140822_zip_field_to_text', 1535208432)' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `mi...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->addMigrationHistory('<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#11 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#17 /var/www/html/index.php(25): yii\base\Application->run()
+#18 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'test.migration' doesn't exist
+)
+
+2018-08-25 14:46:28 [172.18.0.1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/init'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Finit'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Finit'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '41346'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; _csrf=db99359fa110fba7dfe17dc8a98f102d5b05d4d099ed4d36fca23b5af85ab620a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xTktkhp6C1CMvdnGBtG4r5rgd2Tidqnj%22%3B%7D; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; pma_lang=en; phpMyAdmin=127eac56e2d667cd6f6200ee1e05563c; pmaUser-1=%7B%22iv%22%3A%22cp0XVLbY46e8cDR4nbBiug%3D%3D%22%2C%22mac%22%3A%22fbf3a7df1cf436f7a22fc32038ebf7c0971c180e%22%2C%22payload%22%3A%226KzDVTn9OjrOlkqmFzF4Pg%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%22Ivy6bsnIARu5jqZRgI1tcg%3D%3D%22%2C%22mac%22%3A%22d7a89aeed3af0531c83c406829fc9f8f64c35e5b%22%2C%22payload%22%3A%22C68C5bn2jhcWy5kLjYy8zBtPlzP1IZFH3pdRolAZzsg6awyHRlamY6KOn%2BCDDaII%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535208388.5028
+    'REQUEST_TIME' => 1535208388
+]
+2018-08-25 14:47:20 [172.18.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.log' doesn't exist
+The SQL being executed was: INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`)
+                VALUES (1, 'yii\\db\\Exception', 1535208439.9549, '[172.18.0.1][-][-]', 'exception \'PDOException\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.migration\' doesn\'t exist\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\\db\\Command->execute()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\\console\\controllers\\MigrateController->addMigrationHistory(\'<span class=\"st...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\\console\\controllers\\BaseMigrateController->migrateUp(\'<span class=\"st...\')\n#5 [internal function]: yii\\console\\controllers\\BaseMigrateController->actionUp(\'<span class=\"nu...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[<span class=\"n...\')\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[]\')\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\\console\\Controller->runAction(\'<span class=\"st...\')\n#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\\commands\\MigrateController::webMigrateAll()\n#11 [internal function]: humhub\\modules\\installer\\controllers\\SetupController->actionInit()\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[<span class=\"s...\')\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#17 /var/www/html/index.php(25): yii\\base\\Application->run()\n#18 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.migration\' doesn\'t exist\nThe SQL being executed was: INSERT INTO `migration` (`version`, `apply_time`) VALUES (\'m140907_140822_zip_field_to_text\', 1535208432)\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\\db\\Schema->convertException(Object(PDOException), \'INSERT INTO `mi...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(289): yii\\db\\Command->execute()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\\console\\controllers\\MigrateController->addMigrationHistory(\'<span class=\"st...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\\console\\controllers\\BaseMigrateController->migrateUp(\'<span class=\"st...\')\n#5 [internal function]: yii\\console\\controllers\\BaseMigrateController->actionUp(\'<span class=\"nu...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[<span class=\"n...\')\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[]\')\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#9 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\\console\\Controller->runAction(\'<span class=\"st...\')\n#10 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\\commands\\MigrateController::webMigrateAll()\n#11 [internal function]: humhub\\modules\\installer\\controllers\\SetupController->actionInit()\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[<span class=\"s...\')\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#17 /var/www/html/index.php(25): yii\\base\\Application->run()\n#18 {main}\nAdditional Information:\nArray\n(\n    [0] => 42S02\n    [1] => 1146\n    [2] => Table \'test.migration\' doesn\'t exist\n)\n')' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `lo...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('INSERT INTO `lo...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(133): yii\log\DbTarget->export()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(189): yii\log\Target->collect(Array, true)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#7 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#8 {main}
+2018-08-25 14:46:28 [172.18.0.1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/init'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Finit'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Finit'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '41346'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; _csrf=db99359fa110fba7dfe17dc8a98f102d5b05d4d099ed4d36fca23b5af85ab620a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xTktkhp6C1CMvdnGBtG4r5rgd2Tidqnj%22%3B%7D; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; pma_lang=en; phpMyAdmin=127eac56e2d667cd6f6200ee1e05563c; pmaUser-1=%7B%22iv%22%3A%22cp0XVLbY46e8cDR4nbBiug%3D%3D%22%2C%22mac%22%3A%22fbf3a7df1cf436f7a22fc32038ebf7c0971c180e%22%2C%22payload%22%3A%226KzDVTn9OjrOlkqmFzF4Pg%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%22Ivy6bsnIARu5jqZRgI1tcg%3D%3D%22%2C%22mac%22%3A%22d7a89aeed3af0531c83c406829fc9f8f64c35e5b%22%2C%22payload%22%3A%22C68C5bn2jhcWy5kLjYy8zBtPlzP1IZFH3pdRolAZzsg6awyHRlamY6KOn%2BCDDaII%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535208388.5028
+    'REQUEST_TIME' => 1535208388
+]
+2018-08-25 15:17:32 [172.18.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.setting' doesn't exist' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Migration.php(392): yii\db\Command->execute()
+#3 /var/www/html/protected/humhub/migrations/m160508_005740_settings_cleanup.php(13): yii\db\Migration->dropColumn('<span class="st...', '<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160508_005740_settings_cleanup->up()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#10 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#11 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#12 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#18 /var/www/html/index.php(25): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.setting' doesn't exist
+The SQL being executed was: ALTER TABLE `setting` DROP COLUMN `updated_at`' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'ALTER TABLE `se...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Migration.php(392): yii\db\Command->execute()
+#3 /var/www/html/protected/humhub/migrations/m160508_005740_settings_cleanup.php(13): yii\db\Migration->dropColumn('<span class="st...', '<span class="st...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160508_005740_settings_cleanup->up()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('<span class="st...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('<span class="nu...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[<span class="n...')
+#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('<span class="st...', '[]')
+#10 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\console\Controller->runAction('<span class="st...')
+#11 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\commands\MigrateController::webMigrateAll()
+#12 [internal function]: humhub\modules\installer\controllers\SetupController->actionInit()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#18 /var/www/html/index.php(25): yii\base\Application->run()
+#19 {main}
+Additional Information:
+
+2018-08-25 15:14:59 [172.18.0.1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/init'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Finit'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Finit'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '45332'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; _csrf=db99359fa110fba7dfe17dc8a98f102d5b05d4d099ed4d36fca23b5af85ab620a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xTktkhp6C1CMvdnGBtG4r5rgd2Tidqnj%22%3B%7D; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; pma_lang=en; phpMyAdmin=127eac56e2d667cd6f6200ee1e05563c; pmaUser-1=%7B%22iv%22%3A%2258qlQ4eHqjDoDoXOKXyYTg%3D%3D%22%2C%22mac%22%3A%22d0abe250bdc256f4ebf1af68e6139133806fe709%22%2C%22payload%22%3A%22FV2GfNpNNQUvLr2GrPLnlA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%22wpx%2BkplijXRt%5C%2FP9JvaUSmg%3D%3D%22%2C%22mac%22%3A%22e423e5bf890dc07e5f85aa23a7ae2b7a6d64ea95%22%2C%22payload%22%3A%22lzb3M9BPutQHB1v99QH7vi2uBV1kk5taIj8aJuorCEwIZ3H8eqbKNZl%5C%2Fn2Pta9kt%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535210099.206
+    'REQUEST_TIME' => 1535210099
+]
+2018-08-25 15:17:33 [172.18.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.log' doesn't exist
+The SQL being executed was: INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`)
+                VALUES (1, 'yii\\db\\Exception', 1535210252.6706, '[172.18.0.1][-][-]', 'exception \'PDOException\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.setting\' doesn\'t exist\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Migration.php(392): yii\\db\\Command->execute()\n#3 /var/www/html/protected/humhub/migrations/m160508_005740_settings_cleanup.php(13): yii\\db\\Migration->dropColumn(\'<span class=\"st...\', \'<span class=\"st...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160508_005740_settings_cleanup->up()\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\\console\\controllers\\BaseMigrateController->migrateUp(\'<span class=\"st...\')\n#6 [internal function]: yii\\console\\controllers\\BaseMigrateController->actionUp(\'<span class=\"nu...\')\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[<span class=\"n...\')\n#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#10 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\\console\\Controller->runAction(\'<span class=\"st...\')\n#11 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\\commands\\MigrateController::webMigrateAll()\n#12 [internal function]: humhub\\modules\\installer\\controllers\\SetupController->actionInit()\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[<span class=\"s...\')\n#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#18 /var/www/html/index.php(25): yii\\base\\Application->run()\n#19 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.setting\' doesn\'t exist\nThe SQL being executed was: ALTER TABLE `setting` DROP COLUMN `updated_at`\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\\db\\Schema->convertException(Object(PDOException), \'ALTER TABLE `se...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Migration.php(392): yii\\db\\Command->execute()\n#3 /var/www/html/protected/humhub/migrations/m160508_005740_settings_cleanup.php(13): yii\\db\\Migration->dropColumn(\'<span class=\"st...\', \'<span class=\"st...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160508_005740_settings_cleanup->up()\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\\console\\controllers\\BaseMigrateController->migrateUp(\'<span class=\"st...\')\n#6 [internal function]: yii\\console\\controllers\\BaseMigrateController->actionUp(\'<span class=\"nu...\')\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[<span class=\"n...\')\n#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#10 /var/www/html/protected/humhub/commands/MigrateController.php(184): yii\\console\\Controller->runAction(\'<span class=\"st...\')\n#11 /var/www/html/protected/humhub/modules/installer/controllers/SetupController.php(127): humhub\\commands\\MigrateController::webMigrateAll()\n#12 [internal function]: humhub\\modules\\installer\\controllers\\SetupController->actionInit()\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\\base\\InlineAction->runWithParams(\'[<span class=\"s...\')\n#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[<span class=\"s...\')\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#18 /var/www/html/index.php(25): yii\\base\\Application->run()\n#19 {main}\nAdditional Information:\n')' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `lo...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('INSERT INTO `lo...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(133): yii\log\DbTarget->export()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(189): yii\log\Target->collect(Array, true)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2018-08-25 15:14:59 [172.18.0.1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/init'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Finit'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Finit'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '45332'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; _csrf=db99359fa110fba7dfe17dc8a98f102d5b05d4d099ed4d36fca23b5af85ab620a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xTktkhp6C1CMvdnGBtG4r5rgd2Tidqnj%22%3B%7D; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; pma_lang=en; phpMyAdmin=127eac56e2d667cd6f6200ee1e05563c; pmaUser-1=%7B%22iv%22%3A%2258qlQ4eHqjDoDoXOKXyYTg%3D%3D%22%2C%22mac%22%3A%22d0abe250bdc256f4ebf1af68e6139133806fe709%22%2C%22payload%22%3A%22FV2GfNpNNQUvLr2GrPLnlA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%22wpx%2BkplijXRt%5C%2FP9JvaUSmg%3D%3D%22%2C%22mac%22%3A%22e423e5bf890dc07e5f85aa23a7ae2b7a6d64ea95%22%2C%22payload%22%3A%22lzb3M9BPutQHB1v99QH7vi2uBV1kk5taIj8aJuorCEwIZ3H8eqbKNZl%5C%2Fn2Pta9kt%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535210099.206
+    'REQUEST_TIME' => 1535210099
+]
