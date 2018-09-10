@@ -5,7 +5,7 @@ a:2:{i:0;s:1457:"
                             <!-- Show user image -->
                 <img class="media-object img-rounded pull-left" data-src="holder.js/32x32" alt="32x32"
                      style="width: 32px; height: 32px;"
-                     src="/uploads/profile_image/5aaeaad2-992a-45a9-b650-023cc9358409.jpg?m=1535210637">
+                     src="/uploads/profile_image/82aa8ea8-910a-4e58-9d70-00cf328030fa.jpg?m=1535227732">
             
             <!-- Show space image, if you are outside from a space -->
                                                 <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ED</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Espace de bienvenue" style=" width: 20px; height: 20px">                
@@ -16,7 +16,7 @@ a:2:{i:0;s:1457:"
                 <strong>David Roberts</strong> a rejoint l'espace <strong>Espace de bienvenue</strong>                <br>
 
                 <!-- show time -->
-                <span class="time" title="2018-08-25T15:23:56+00:00">25 août 2018 - 15:23</span>            </div>
+                <span class="time" title="2018-08-25T20:08:52+00:00">25 août 2018 - 20:08</span>            </div>
         </div>
     </li>
 </a>

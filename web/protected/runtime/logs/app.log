@@ -482,3 +482,789 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1535210099.206
     'REQUEST_TIME' => 1535210099
 ]
+2018-08-25 19:37:22 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\base\Exception] exception 'yii\base\Exception' with message 'Could not find module: humhubchat' in /var/www/html/protected/humhub/models/Setting.php:182
+Stack trace:
+#0 /var/www/html/protected/humhub/models/Setting.php(83): humhub\models\Setting::getModule('humhubchat')
+#1 /var/www/html/protected/modules/basic-chat/migrations/m160219_120621_usage_of_humhub_stuff.php(25): humhub\models\Setting::set('theme', 'theme_bright.cs...', 'humhubchat')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160219_120621_usage_of_humhub_stuff->up()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m160219_120621_...')
+#4 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('up', Array)
+#8 /var/www/html/protected/humhub/commands/MigrateController.php(203): yii\console\Controller->runAction('up')
+#9 /var/www/html/protected/humhub/components/Module.php(282): humhub\commands\MigrateController::webMigrateUp('/var/www/html/p...')
+#10 /var/www/html/protected/humhub/components/Module.php(216): humhub\components\Module->migrate()
+#11 /var/www/html/protected/humhub/modules/admin/controllers/ModuleController.php(87): humhub\components\Module->enable()
+#12 [internal function]: humhub\modules\admin\controllers\ModuleController->actionEnable()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('enable', Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('admin/module/en...', Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#18 /var/www/html/index.php(25): yii\base\Application->run()
+#19 {main}
+2018-08-25 19:37:20 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = [
+    'r' => 'admin/module/enable'
+    'moduleId' => 'humhub-chat'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=admin%2Fmodule%2Fenable&moduleId=humhub-chat'
+    'REQUEST_METHOD' => 'POST'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '98'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=admin%2Fmodule%2Fenable&moduleId=humhub-chat'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '37560'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '98'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8000'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=admin%2Fmodule%2Flist'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pmaUser-1=%7B%22iv%22%3A%22DSVfChdprLTRWYICU3LDMQ%3D%3D%22%2C%22mac%22%3A%22fc0fabcdafedb1d8a709ca8c9f36880e3374818e%22%2C%22payload%22%3A%22pElOWIUcJldlI3aBIOcaOw%3D%3D%22%7D; phpMyAdmin=a59be496d1fcff63fe26afd5634d004e; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535225840.9179
+    'REQUEST_TIME' => 1535225840
+]
+2018-08-25 19:37:57 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\base\Exception] exception 'yii\base\Exception' with message 'Could not find module: humhubchat' in /var/www/html/protected/humhub/models/Setting.php:182
+Stack trace:
+#0 /var/www/html/protected/humhub/models/Setting.php(83): humhub\models\Setting::getModule('humhubchat')
+#1 /var/www/html/protected/modules/basic-chat/migrations/m160219_120621_usage_of_humhub_stuff.php(25): humhub\models\Setting::set('theme', 'theme_bright.cs...', 'humhubchat')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m160219_120621_usage_of_humhub_stuff->up()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m160219_120621_...')
+#4 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('up', Array)
+#8 /var/www/html/protected/humhub/commands/MigrateController.php(203): yii\console\Controller->runAction('up')
+#9 /var/www/html/protected/humhub/components/Module.php(282): humhub\commands\MigrateController::webMigrateUp('/var/www/html/p...')
+#10 /var/www/html/protected/humhub/components/Module.php(216): humhub\components\Module->migrate()
+#11 /var/www/html/protected/humhub/modules/admin/controllers/ModuleController.php(87): humhub\components\Module->enable()
+#12 [internal function]: humhub\modules\admin\controllers\ModuleController->actionEnable()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('enable', Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('admin/module/en...', Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#18 /var/www/html/index.php(25): yii\base\Application->run()
+#19 {main}
+2018-08-25 19:37:57 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = [
+    'r' => 'admin/module/enable'
+    'moduleId' => 'humhub-chat'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=admin%2Fmodule%2Fenable&moduleId=humhub-chat'
+    'REQUEST_METHOD' => 'POST'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '98'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=admin%2Fmodule%2Fenable&moduleId=humhub-chat'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '37560'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '98'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ORIGIN' => 'http://localhost:8000'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=admin%2Fmodule%2Flist'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pmaUser-1=%7B%22iv%22%3A%22DSVfChdprLTRWYICU3LDMQ%3D%3D%22%2C%22mac%22%3A%22fc0fabcdafedb1d8a709ca8c9f36880e3374818e%22%2C%22payload%22%3A%22pElOWIUcJldlI3aBIOcaOw%3D%3D%22%7D; phpMyAdmin=a59be496d1fcff63fe26afd5634d004e; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535225877.1326
+    'REQUEST_TIME' => 1535225877
+]
+2018-08-25 19:38:11 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\base\Exception] exception 'yii\base\Exception' with message 'Could not find module: humhubchat' in /var/www/html/protected/humhub/models/Setting.php:182
+Stack trace:
+#0 /var/www/html/protected/humhub/models/Setting.php(69): humhub\models\Setting::getModule('humhubchat')
+#1 /var/www/html/protected/modules/basic-chat/Assets.php(20): humhub\models\Setting::get('theme', 'humhubchat')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): humhub\modules\humhubchat\Assets->init()
+#3 [internal function]: yii\base\BaseObject->__construct(Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\modules\\...', Array, Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('humhub\\modules\\...', Array, Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\BaseYii::createObject(Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/AssetManager.php(239): yii\web\AssetManager->loadBundle('humhub\\modules\\...', Array, true)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/View.php(286): yii\web\AssetManager->getBundle('humhub\\modules\\...')
+#10 /var/www/html/protected/modules/basic-chat/Events.php(19): yii\web\View->registerAssetBundle('humhub\\modules\\...')
+#11 [internal function]: humhub\modules\humhubchat\Events::addChatFrame(Object(yii\base\Event))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Event.php(310): call_user_func(Array, Object(yii\base\Event))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(636): yii\base\Event::trigger(Object(humhub\modules\dashboard\widgets\Sidebar), 'init', NULL)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(72): yii\base\Component->trigger('init')
+#15 /var/www/html/protected/humhub/widgets/BaseStack.php(67): yii\base\Widget->init()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): humhub\widgets\BaseStack->init()
+#17 [internal function]: yii\base\BaseObject->__construct(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(383): ReflectionClass->newInstanceArgs(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\modules\\...', Array, Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('humhub\\modules\\...', Array, Array)
+#21 /var/www/html/protected/humhub/components/Widget.php(54): yii\BaseYii::createObject(Array)
+#22 /var/www/html/protected/humhub/modules/dashboard/views/dashboard/index.php(31): humhub\components\Widget::widget(Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(336): require('/var/www/html/p...')
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/var/www/html/p...', Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/var/www/html/p...', Array, Object(humhub\modules\dashboard\controllers\DashboardController))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('index', Array, Object(humhub\modules\dashboard\controllers\DashboardController))
+#27 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(70): yii\base\Controller->render('index', Array)
+#28 [internal function]: humhub\modules\dashboard\controllers\DashboardController->actionIndex()
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#32 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/dashb...', Array)
+#33 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#34 /var/www/html/index.php(25): yii\base\Application->run()
+#35 {main}
+2018-08-25 19:38:11 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = [
+    'r' => 'dashboard/dashboard'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=dashboard%2Fdashboard'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=dashboard%2Fdashboard'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '37560'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pmaUser-1=%7B%22iv%22%3A%22DSVfChdprLTRWYICU3LDMQ%3D%3D%22%2C%22mac%22%3A%22fc0fabcdafedb1d8a709ca8c9f36880e3374818e%22%2C%22payload%22%3A%22pElOWIUcJldlI3aBIOcaOw%3D%3D%22%7D; phpMyAdmin=a59be496d1fcff63fe26afd5634d004e; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535225891.1311
+    'REQUEST_TIME' => 1535225891
+]
+2018-08-25 19:39:44 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\base\Exception] exception 'yii\base\Exception' with message 'Could not find module: humhubchat' in /var/www/html/protected/humhub/models/Setting.php:182
+Stack trace:
+#0 /var/www/html/protected/humhub/models/Setting.php(69): humhub\models\Setting::getModule('humhubchat')
+#1 /var/www/html/protected/modules/humhub-basic-chat/Assets.php(20): humhub\models\Setting::get('theme', 'humhubchat')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): humhub\modules\humhubchat\Assets->init()
+#3 [internal function]: yii\base\BaseObject->__construct(Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\modules\\...', Array, Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('humhub\\modules\\...', Array, Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\BaseYii::createObject(Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/AssetManager.php(239): yii\web\AssetManager->loadBundle('humhub\\modules\\...', Array, true)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/View.php(286): yii\web\AssetManager->getBundle('humhub\\modules\\...')
+#10 /var/www/html/protected/modules/humhub-basic-chat/Events.php(19): yii\web\View->registerAssetBundle('humhub\\modules\\...')
+#11 [internal function]: humhub\modules\humhubchat\Events::addChatFrame(Object(yii\base\Event))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Event.php(310): call_user_func(Array, Object(yii\base\Event))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(636): yii\base\Event::trigger(Object(humhub\modules\dashboard\widgets\Sidebar), 'init', NULL)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(72): yii\base\Component->trigger('init')
+#15 /var/www/html/protected/humhub/widgets/BaseStack.php(67): yii\base\Widget->init()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): humhub\widgets\BaseStack->init()
+#17 [internal function]: yii\base\BaseObject->__construct(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(383): ReflectionClass->newInstanceArgs(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\modules\\...', Array, Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('humhub\\modules\\...', Array, Array)
+#21 /var/www/html/protected/humhub/components/Widget.php(54): yii\BaseYii::createObject(Array)
+#22 /var/www/html/protected/humhub/modules/dashboard/views/dashboard/index.php(31): humhub\components\Widget::widget(Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(336): require('/var/www/html/p...')
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/var/www/html/p...', Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/var/www/html/p...', Array, Object(humhub\modules\dashboard\controllers\DashboardController))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('index', Array, Object(humhub\modules\dashboard\controllers\DashboardController))
+#27 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(70): yii\base\Controller->render('index', Array)
+#28 [internal function]: humhub\modules\dashboard\controllers\DashboardController->actionIndex()
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#32 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/dashb...', Array)
+#33 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#34 /var/www/html/index.php(25): yii\base\Application->run()
+#35 {main}
+2018-08-25 19:39:44 [172.18.0.1][1][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = [
+    'r' => 'dashboard/dashboard'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=dashboard%2Fdashboard'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=dashboard%2Fdashboard'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '38628'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pmaUser-1=%7B%22iv%22%3A%22DSVfChdprLTRWYICU3LDMQ%3D%3D%22%2C%22mac%22%3A%22fc0fabcdafedb1d8a709ca8c9f36880e3374818e%22%2C%22payload%22%3A%22pElOWIUcJldlI3aBIOcaOw%3D%3D%22%7D; phpMyAdmin=a59be496d1fcff63fe26afd5634d004e; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535225984.3607
+    'REQUEST_TIME' => 1535225984
+]
+2018-08-25 19:43:59 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.user_http_session' doesn't exist' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\db\Command->queryScalar()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#5 [internal function]: yii\web\DbSession->readSession('<span class="st...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\web\Session->open()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\web\Session->get('<span class="st...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\web\User->renewAuthStatus()
+#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\web\User->getIdentity()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('<span class="st...')
+#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#16 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\components\Application->bootstrap()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#20 /var/www/html/index.php(25): yii\base\Application->__construct('[<span class="s...')
+#21 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.user_http_session' doesn't exist
+The SQL being executed was: SELECT `data` FROM `user_http_session` WHERE `expire`>1535226239 AND `id`='5c3f54dccd1b8f7fb582254bdd35bc33'' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT `data` F...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\db\Command->queryScalar()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#5 [internal function]: yii\web\DbSession->readSession('<span class="st...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\web\Session->open()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\web\Session->get('<span class="st...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\web\User->renewAuthStatus()
+#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\web\User->getIdentity()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('<span class="st...')
+#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#16 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\components\Application->bootstrap()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#20 /var/www/html/index.php(25): yii\base\Application->__construct('[<span class="s...')
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'test.user_http_session' doesn't exist
+)
+
+2018-08-25 19:43:59 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '39248'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded; phpMyAdmin=cfaa3987d18e13a3cc075472380dc21f; pmaUser-1=%7B%22iv%22%3A%22Js7gjuHXa6C0BDw1Vq%2Bt3w%3D%3D%22%2C%22mac%22%3A%2216a8107a8d3ef33d74b1f2fb2ac817c175a2ea92%22%2C%22payload%22%3A%22O8%5C%2F8aqbj3IB5Z51cIcUnUA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%223xjG1zW%2Bu2vreWr9V6Ge%2Bw%3D%3D%22%2C%22mac%22%3A%226ca3fe89cfa0e1d91911a9325dcd81a8823bf4f2%22%2C%22payload%22%3A%22NZG50hp27GhZExtF8Ava19pd4NzuDJw62quCwo8Ho%5C%2FLAmnWlLS4GbF2zWBIiSyuc%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535226239.4964
+    'REQUEST_TIME' => 1535226239
+]
+2018-08-25 19:43:59 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.log' doesn't exist
+The SQL being executed was: INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`)
+                VALUES (1, 'yii\\db\\Exception', 1535226239.6509, '[172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33]', 'exception \'PDOException\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.user_http_session\' doesn\'t exist\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\\db\\Command->queryScalar()\n#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\\db\\Query->scalar(Object(yii\\db\\Connection))\n#5 [internal function]: yii\\web\\DbSession->readSession(\'<span class=\"st...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\\web\\Session->open()\n#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\\web\\Session->get(\'<span class=\"st...\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\\web\\User->renewAuthStatus()\n#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\\web\\User->getIdentity()\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\\web\\User->getIsGuest()\n#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\\base\\Component->__get(\'<span class=\"st...\')\n#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\\components\\i18n\\I18N->autosetLocale()\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\\components\\bootstrap\\LanguageSelector->bootstrap(Object(humhub\\components\\Application))\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\\base\\Application->bootstrap()\n#16 /var/www/html/protected/humhub/components/Application.php(46): yii\\web\\Application->bootstrap()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\\components\\Application->bootstrap()\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\\base\\Application->init()\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\\base\\BaseObject->__construct(\'[<span class=\"s...\')\n#20 /var/www/html/index.php(25): yii\\base\\Application->__construct(\'[<span class=\"s...\')\n#21 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.user_http_session\' doesn\'t exist\nThe SQL being executed was: SELECT `data` FROM `user_http_session` WHERE `expire`>1535226239 AND `id`=\'5c3f54dccd1b8f7fb582254bdd35bc33\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\\db\\Schema->convertException(Object(PDOException), \'SELECT `data` F...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\\db\\Command->queryScalar()\n#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\\db\\Query->scalar(Object(yii\\db\\Connection))\n#5 [internal function]: yii\\web\\DbSession->readSession(\'<span class=\"st...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\\web\\Session->open()\n#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\\web\\Session->get(\'<span class=\"st...\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\\web\\User->renewAuthStatus()\n#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\\web\\User->getIdentity()\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\\web\\User->getIsGuest()\n#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\\base\\Component->__get(\'<span class=\"st...\')\n#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\\components\\i18n\\I18N->autosetLocale()\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\\components\\bootstrap\\LanguageSelector->bootstrap(Object(humhub\\components\\Application))\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\\base\\Application->bootstrap()\n#16 /var/www/html/protected/humhub/components/Application.php(46): yii\\web\\Application->bootstrap()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\\components\\Application->bootstrap()\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\\base\\Application->init()\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\\base\\BaseObject->__construct(\'[<span class=\"s...\')\n#20 /var/www/html/index.php(25): yii\\base\\Application->__construct(\'[<span class=\"s...\')\n#21 {main}\nAdditional Information:\nArray\n(\n    [0] => 42S02\n    [1] => 1146\n    [2] => Table \'test.user_http_session\' doesn\'t exist\n)\n')' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `lo...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('INSERT INTO `lo...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(133): yii\log\DbTarget->export()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(189): yii\log\Target->collect(Array, true)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2018-08-25 19:43:59 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '39248'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded; phpMyAdmin=cfaa3987d18e13a3cc075472380dc21f; pmaUser-1=%7B%22iv%22%3A%22Js7gjuHXa6C0BDw1Vq%2Bt3w%3D%3D%22%2C%22mac%22%3A%2216a8107a8d3ef33d74b1f2fb2ac817c175a2ea92%22%2C%22payload%22%3A%22O8%5C%2F8aqbj3IB5Z51cIcUnUA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%223xjG1zW%2Bu2vreWr9V6Ge%2Bw%3D%3D%22%2C%22mac%22%3A%226ca3fe89cfa0e1d91911a9325dcd81a8823bf4f2%22%2C%22payload%22%3A%22NZG50hp27GhZExtF8Ava19pd4NzuDJw62quCwo8Ho%5C%2FLAmnWlLS4GbF2zWBIiSyuc%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535226239.4964
+    'REQUEST_TIME' => 1535226239
+]
+2018-08-25 19:45:58 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.user_http_session' doesn't exist' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\db\Command->queryScalar()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#5 [internal function]: yii\web\DbSession->readSession('<span class="st...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\web\Session->open()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\web\Session->get('<span class="st...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\web\User->renewAuthStatus()
+#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\web\User->getIdentity()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('<span class="st...')
+#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#16 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\components\Application->bootstrap()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#20 /var/www/html/index.php(25): yii\base\Application->__construct('[<span class="s...')
+#21 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.user_http_session' doesn't exist
+The SQL being executed was: SELECT `data` FROM `user_http_session` WHERE `expire`>1535226358 AND `id`='5c3f54dccd1b8f7fb582254bdd35bc33'' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT `data` F...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('<span class="st...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\db\Command->queryScalar()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#5 [internal function]: yii\web\DbSession->readSession('<span class="st...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()
+#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\web\Session->open()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\web\Session->get('<span class="st...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\web\User->renewAuthStatus()
+#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\web\User->getIdentity()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('<span class="st...')
+#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#16 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\components\Application->bootstrap()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#20 /var/www/html/index.php(25): yii\base\Application->__construct('[<span class="s...')
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'test.user_http_session' doesn't exist
+)
+
+2018-08-25 19:45:58 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '39496'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded; phpMyAdmin=cfaa3987d18e13a3cc075472380dc21f; pmaUser-1=%7B%22iv%22%3A%22Js7gjuHXa6C0BDw1Vq%2Bt3w%3D%3D%22%2C%22mac%22%3A%2216a8107a8d3ef33d74b1f2fb2ac817c175a2ea92%22%2C%22payload%22%3A%22O8%5C%2F8aqbj3IB5Z51cIcUnUA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%223xjG1zW%2Bu2vreWr9V6Ge%2Bw%3D%3D%22%2C%22mac%22%3A%226ca3fe89cfa0e1d91911a9325dcd81a8823bf4f2%22%2C%22payload%22%3A%22NZG50hp27GhZExtF8Ava19pd4NzuDJw62quCwo8Ho%5C%2FLAmnWlLS4GbF2zWBIiSyuc%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535226358.3892
+    'REQUEST_TIME' => 1535226358
+]
+2018-08-25 19:45:58 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.log' doesn't exist
+The SQL being executed was: INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`)
+                VALUES (1, 'yii\\db\\Exception', 1535226358.4881, '[172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33]', 'exception \'PDOException\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.user_http_session\' doesn\'t exist\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:1258\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\\db\\Command->queryScalar()\n#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\\db\\Query->scalar(Object(yii\\db\\Connection))\n#5 [internal function]: yii\\web\\DbSession->readSession(\'<span class=\"st...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\\web\\Session->open()\n#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\\web\\Session->get(\'<span class=\"st...\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\\web\\User->renewAuthStatus()\n#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\\web\\User->getIdentity()\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\\web\\User->getIsGuest()\n#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\\base\\Component->__get(\'<span class=\"st...\')\n#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\\components\\i18n\\I18N->autosetLocale()\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\\components\\bootstrap\\LanguageSelector->bootstrap(Object(humhub\\components\\Application))\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\\base\\Application->bootstrap()\n#16 /var/www/html/protected/humhub/components/Application.php(46): yii\\web\\Application->bootstrap()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\\components\\Application->bootstrap()\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\\base\\Application->init()\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\\base\\BaseObject->__construct(\'[<span class=\"s...\')\n#20 /var/www/html/index.php(25): yii\\base\\Application->__construct(\'[<span class=\"s...\')\n#21 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42S02]: Base table or view not found: 1146 Table \'test.user_http_session\' doesn\'t exist\nThe SQL being executed was: SELECT `data` FROM `user_http_session` WHERE `expire`>1535226358 AND `id`=\'5c3f54dccd1b8f7fb582254bdd35bc33\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\\db\\Schema->convertException(Object(PDOException), \'SELECT `data` F...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1148): yii\\db\\Command->internalExecute(\'<span class=\"st...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(425): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(291): yii\\db\\Command->queryScalar()\n#4 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(156): yii\\db\\Query->scalar(Object(yii\\db\\Connection))\n#5 [internal function]: yii\\web\\DbSession->readSession(\'<span class=\"st...\')\n#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(137): session_start()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(612): yii\\web\\Session->open()\n#8 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(683): yii\\web\\Session->get(\'<span class=\"st...\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(192): yii\\web\\User->renewAuthStatus()\n#10 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(360): yii\\web\\User->getIdentity()\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(139): yii\\web\\User->getIsGuest()\n#12 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\\base\\Component->__get(\'<span class=\"st...\')\n#13 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\\components\\i18n\\I18N->autosetLocale()\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(327): humhub\\components\\bootstrap\\LanguageSelector->bootstrap(Object(humhub\\components\\Application))\n#15 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\\base\\Application->bootstrap()\n#16 /var/www/html/protected/humhub/components/Application.php(46): yii\\web\\Application->bootstrap()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(273): humhub\\components\\Application->bootstrap()\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\\base\\Application->init()\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(206): yii\\base\\BaseObject->__construct(\'[<span class=\"s...\')\n#20 /var/www/html/index.php(25): yii\\base\\Application->__construct(\'[<span class=\"s...\')\n#21 {main}\nAdditional Information:\nArray\n(\n    [0] => 42S02\n    [1] => 1146\n    [2] => Table \'test.user_http_session\' doesn\'t exist\n)\n')' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:664
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `lo...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('INSERT INTO `lo...')
+#2 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(133): yii\log\DbTarget->export()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(189): yii\log\Target->collect(Array, true)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2018-08-25 19:45:58 [172.18.0.1][-][5c3f54dccd1b8f7fb582254bdd35bc33][info][application] $_GET = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '39496'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; language=ba0e8ee6e87ea2ed15ee25a9f16c33f675934d9101e9780515794da27d88998ca%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; PHPSESSID=5c3f54dccd1b8f7fb582254bdd35bc33; _identity=876877f4db492c368e82a9af4d775eda697386f20dd521e2be5d88af8b713f79a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22eddf69f8-b05e-467a-bb1e-be6c0f693402%22%2C2592000%5D%22%3B%7D; _csrf=2a696fa81eaf581445482188dd198e5e37187d8619de33992859df0fbc0da7efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22C7lO21mmZuQ4aurXur1UVgaMW7LNSxr2%22%3B%7D; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded; phpMyAdmin=cfaa3987d18e13a3cc075472380dc21f; pmaUser-1=%7B%22iv%22%3A%22Js7gjuHXa6C0BDw1Vq%2Bt3w%3D%3D%22%2C%22mac%22%3A%2216a8107a8d3ef33d74b1f2fb2ac817c175a2ea92%22%2C%22payload%22%3A%22O8%5C%2F8aqbj3IB5Z51cIcUnUA%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%223xjG1zW%2Bu2vreWr9V6Ge%2Bw%3D%3D%22%2C%22mac%22%3A%226ca3fe89cfa0e1d91911a9325dcd81a8823bf4f2%22%2C%22payload%22%3A%22NZG50hp27GhZExtF8Ava19pd4NzuDJw62quCwo8Ho%5C%2FLAmnWlLS4GbF2zWBIiSyuc%22%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535226358.3892
+    'REQUEST_TIME' => 1535226358
+]
+2018-08-25 20:10:38 [172.18.0.1][1][20111908130bc97f24293004dfb2d45c][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: humhub\modules\humhubchat\Module::getPath()' in /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php:300
+Stack trace:
+#0 /var/www/html/protected/humhub/modules/admin/controllers/ModuleController.php(170): yii\base\Component->__call('getPath', Array)
+#1 /var/www/html/protected/humhub/modules/admin/controllers/ModuleController.php(170): humhub\modules\humhubchat\Module->getPath()
+#2 [internal function]: humhub\modules\admin\controllers\ModuleController->actionRemove()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('remove', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('admin/module/re...', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#8 /var/www/html/index.php(25): yii\base\Application->run()
+#9 {main}
+2018-08-25 20:10:38 [172.18.0.1][1][20111908130bc97f24293004dfb2d45c][info][application] $_GET = [
+    'r' => 'admin/module/remove'
+    'moduleId' => 'humhub-chat'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data'
+    'HOSTNAME' => 'fc653508c4ad'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -Wl,--hash-style=both -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '5.6.32'
+    'GPG_KEYS' => '0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2'
+    'PHP_ASC_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz.asc/from/this/mirror'
+    'PHP_URL' => 'https://secure.php.net/get/php-5.6.32.tar.xz/from/this/mirror'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		libpcre3-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '8c2b4f721c7475fb9eabda2495209e91ea933082e6f34299d11cba88cd76e64b'
+    'USER' => 'www-data'
+    'FCGI_ROLE' => 'RESPONDER'
+    'QUERY_STRING' => 'r=admin%2Fmodule%2Fremove&moduleId=humhub-chat'
+    'REQUEST_METHOD' => 'POST'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '98'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=admin%2Fmodule%2Fremove&moduleId=humhub-chat'
+    'DOCUMENT_URI' => '/index.php'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.2'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'REMOTE_PORT' => '41604'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'PATH_INFO' => ''
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '98'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8000'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36 OPR/55.0.2994.37'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost:8000/index.php?r=admin%2Fmodule%2Flist'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_COOKIE' => 'csrftoken=H0NDD3GOQcaQDioNTQxmN0Z4YMdScRsitJ86bSapE74fUBqCkmmhOD2DJZBUQd2E; io=nmDT99r0dUbaYtmLAAEY; _ga=GA1.1.1541680117.1534049097; pma_lang=en; pm_getting-started-panel=expanded; pm_space-members-panel=expanded; pm_new-people-panel=expanded; pm_user-statistics-panel=expanded; pm_panel-discordapp=expanded; pm_user-tags-panel=expanded; pm_user-spaces-panel=expanded; language=e49956c23f3563be64264328cb885cc7e69ac39f5f630d6dcea87c489320d7caa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22fr%22%3B%7D; pmaUser-1=%7B%22iv%22%3A%22gjmomSO0QVe%5C%2Fa%2BKdYiCcyw%3D%3D%22%2C%22mac%22%3A%228c04ef193547602a888e7c3052dd59774c6dd7e6%22%2C%22payload%22%3A%22fxkrfE4UD8LzjH7gVOFuAQ%3D%3D%22%7D; phpMyAdmin=394068f0a81246cb8cf0d2ec240c629d; PHPSESSID=20111908130bc97f24293004dfb2d45c; _identity=5949e9bc6489eb1a0d06dccf0a9f98ce346ec10aaf35ec57ab4a0933c4abfa80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%22be369af6-0064-4b75-9d55-92bfdc1655a7%22%2C2592000%5D%22%3B%7D; _csrf=bb1af763892c3477295abb813ca3887b7031bc06cac1b76d5d9354c88a63b0f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bCdEe24Gtaql15FUGvu58UBgMX37PAcK%22%3B%7D'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535227838.3629
+    'REQUEST_TIME' => 1535227838
+]
