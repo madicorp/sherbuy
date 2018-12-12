@@ -4,9 +4,9 @@
     'db' => 
     array (
       'class' => 'yii\\db\\Connection',
-      'dsn' => 'mysql:host=mysqldb;dbname=test',
+      'dsn' => 'mysql:host=localhost;dbname=sherbuy',
       'username' => 'root',
-      'password' => 'root',
+      'password' => '',
       'charset' => 'utf8',
     ),
     'user' => 
@@ -40,16 +40,16 @@
     array (
       'db' => 
       array (
-        'installer_hostname' => 'mysqldb',
-        'installer_database' => 'test',
+        'installer_hostname' => 'localhost',
+        'installer_database' => 'sherbuy',
       ),
     ),
-    'config_created_at' => 1535227800,
+    'config_created_at' => 1544640521,
     'horImageScrollOnMobile' => '1',
     'databaseInstalled' => true,
     'installed' => true,
   ),
-  'name' => 'SHERBUY',
+  'name' => 'Sherbuy',
   'language' => 'fr',
   'timeZone' => 'UTC',
 ); ?>

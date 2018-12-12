@@ -16,16 +16,17 @@ use yii\helpers\Url;
 /* @var $wallEntryWidget string */
 /* @var $user \humhub\modules\user\models\User */
 /* @var $showContentContainer \humhub\modules\user\models\User */
+$class = end(split("\\\\",get_class($object)))  ;
 ?>
 
 
-<div class="panel panel-default wall_<?= $object->getUniqueId(); ?>">
+<div class="panel panel-default wall_<?= $object->getUniqueId(); ?> content_<?= strtolower($class); ?>">
     <div class="panel-body">
 
         <div class="media">
             <!-- since v1.2 -->
             <div class="stream-entry-loader"></div>
-
+            <span class="wallentry-labels">
             <!-- start: show wall entry options -->
             <?php if ($renderControls) : ?>
                 <ul class="nav nav-pills preferences">
@@ -75,6 +76,10 @@ use yii\helpers\Url;
 
                     <div class="pull-right <?= ($renderControls) ? 'labels' : '' ?>">
                         <?= WallEntryLabels::widget(['object' => $object]); ?>
+                        <span class="label label-<?= strtolower($class); ?>">
+                            <i class="fa fa-<?= strtolower($class); ?>"></i>
+                            <?= Yii::t('PostModule.base', $class); ?>
+                        </span>
                     </div>
                 </div>
                 <div class="media-subheading">
@@ -89,9 +94,8 @@ use yii\helpers\Url;
                 </div>
             </div>
             <hr/>
-
             <div class="content" id="wall_content_<?= $object->getUniqueId(); ?>">
-                <?= $content; ?>
+               <?= $content; ?>
             </div>
 
             <!-- wall-entry-addons class required since 1.2 -->

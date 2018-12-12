@@ -21,6 +21,7 @@ use humhub\modules\user\models\User;
  * @property integer $id
  * @property string $message_2trash
  * @property string $message
+ * @property string $type
  * @property string $url
  * @property string $created_at
  * @property integer $created_by
@@ -45,6 +46,19 @@ class Post extends ContentActiveRecord implements Searchable
     public $canMove = true;
 
     /**
+     * Space limit modes (include or exclude)
+     */
+    const POST = "POST";
+    const GOOD = "GOOD";
+    const NEED = "NEED";
+    const SERVICE = "SERVICE";
+
+    /**
+     * @var string the post type
+     */
+    public $type = self::POST;
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -60,6 +74,7 @@ class Post extends ContentActiveRecord implements Searchable
         return [
             [['message'], 'required'],
             [['message'], 'string'],
+            [['type'], 'string'],
             [['url'], 'string', 'max' => 255]
         ];
     }
@@ -105,6 +120,21 @@ class Post extends ContentActiveRecord implements Searchable
     }
 
     /**
+     * Returns available Post types how to handle given spaces
+     *
+     * @return array the modes
+     */
+    public static function getPostTypes()
+    {
+        return [
+            Post::POST => Yii::t('PostModule.base', 'Post'),
+            Post::GOOD => Yii::t('PostModule.base', 'Good'),
+            Post::NEED => Yii::t('PostModule.base', 'Need'),
+            Post::SERVICE => Yii::t('PostModule.base', 'Service'),
+        ];
+    }
+
+    /**
      * @inheritdoc
      */
     public function getIcon()
@@ -127,6 +157,7 @@ class Post extends ContentActiveRecord implements Searchable
     {
         $attributes = [
             'message' => $this->message,
+            'type' => $this->type,
             'url' => $this->url,
             'user' => $this->getPostAuthorName()
         ];

@@ -4270,6 +4270,64 @@ ul.tag_input li img {
   cursor: pointer;
   line-height: 8px;
 }
+
+.panel.content_good {
+  box-shadow: 0 0 3px #878089;
+}
+
+.panel.content_need {
+  box-shadow: 0 0 3px #065143;
+}
+
+.panel.content_service {
+  box-shadow: 0 0 3px #BF5648;
+}
+
+.label.label-post {
+  background-color: #BFBD93;
+}
+
+.label.label-good {
+  background-color: #878089;
+}
+
+.label.label-service {
+  background-color: #BF5648;
+}
+
+.label.label-need {
+  background-color: #065143;
+}
+.radio-inline.radio-post .regular-radio:checked + .regular-radio-button:after{
+  background: #BFBD93;
+}
+
+.radio-inline.radio-good .regular-radio:checked + .regular-radio-button:after{
+  background: #878089;
+}
+
+.radio-inline.radio-service .regular-radio:checked + .regular-radio-button:after{
+  background: #BF5648;
+}
+
+.radio-inline.radio-need .regular-radio:checked + .regular-radio-button:after{
+  background: #065143;
+}
+
+.fa.fa-post:before {
+  content: "\f075";
+}
+
+.fa.fa-good:before {
+  content: "\f1b3";
+}
+
+.fa.fa-service:before {
+  content: "\f1cd";
+}
+.fa.fa-need:before {
+  content: "\f059";
+}
 /**
  * Define or overwrite your theme variables here.
  *

@@ -1,14 +1,14 @@
-a:2:{i:0;s:1457:"
-<a href="/index.php?r=activity%2Flink&id=4">
+a:2:{i:0;s:1503:"
+<a href="/sherbuy/index.php?r=activity%2Flink&id=4">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="5">
         <div class="media">
                             <!-- Show user image -->
                 <img class="media-object img-rounded pull-left" data-src="holder.js/32x32" alt="32x32"
                      style="width: 32px; height: 32px;"
-                     src="/uploads/profile_image/413b65d8-3f1b-4b71-9f72-3963660e2529.jpg?m=1535227734">
+                     src="/sherbuy/uploads/profile_image/2ffd1559-743c-4c1c-a8f1-0c5403cfbfd0.jpg?m=1544617876">
             
             <!-- Show space image, if you are outside from a space -->
-                                                <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ED</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Espace de bienvenue" style=" width: 20px; height: 20px">                
+                                                <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ED</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/sherbuy/static/img/default_space.jpg" alt="Espace de bienvenue" style=" width: 20px; height: 20px">                
             
             <div class="media-body text-break">
 
@@ -16,7 +16,7 @@ a:2:{i:0;s:1457:"
                 <strong>Sara Schuster</strong> a rejoint l'espace <strong>Espace de bienvenue</strong>                <br>
 
                 <!-- show time -->
-                <span class="time" title="2018-08-25T20:08:53+00:00">25 août 2018 - 20:08</span>            </div>
+                <span class="time" title="2018-12-12T12:31:15+00:00">12 déc. 2018 - 12:31</span>            </div>
         </div>
     </li>
 </a>

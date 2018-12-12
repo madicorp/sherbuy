@@ -7,10 +7,14 @@ use humhub\modules\activity\widgets\ActivityStreamViewer;
 use humhub\modules\dashboard\widgets\DashboardContent;
 use humhub\modules\dashboard\widgets\Sidebar;
 use humhub\widgets\FooterMenu;
+use humhub\modules\stream\widgets\WallStreamFilterNavigation;
 
 ?>
 
 <div class="container">
+    <div class="row">
+        <?= WallStreamFilterNavigation::widget([]) ?>
+    </div>
     <div class="row">
         <div class="col-md-8 layout-content-container">
             <?= DashboardContent::widget([

@@ -10,7 +10,10 @@ namespace humhub\modules\post\controllers;
 
 use humhub\modules\content\widgets\WallCreateContentForm;
 use humhub\modules\content\components\ContentContainerController;
+use humhub\modules\post\models\Good;
+use humhub\modules\post\models\Need;
 use humhub\modules\post\models\Post;
+use humhub\modules\post\models\Service;
 use humhub\modules\post\permissions\CreatePost;
 use Yii;
 
@@ -27,9 +30,26 @@ class PostController extends ContentContainerController
         if (!$this->contentContainer->getPermissionManager()->can(new CreatePost())) {
             return [];
         }
+        $post = null;
+        $type = Yii::$app->request->post('type');
+        switch ($type) {
+            case Post::GOOD:
+                $post = new Good($this->contentContainer);
+                break;
+            case Post::NEED:
+                $post = new Need($this->contentContainer);
+                break;
+            case Post::SERVICE:
+                $post = new Service($this->contentContainer);
+                break;
+            case Post::POST:
+            default:
+            $post = new Post($this->contentContainer);
+            break;
+        }
 
-        $post = new Post($this->contentContainer);
         $post->message = Yii::$app->request->post('message');
+        $post->type = $type;
 
         return WallCreateContentForm::create($post, $this->contentContainer);
     }
